@@ -4,18 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Live Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
     <script>
         async function generatePDF() {
             const formData = {
-                client_name: document.getElementById("clientName").value,
-                project_title: document.getElementById("projectTitle").value,
-                location: document.getElementById("location").value,
-                client_owner: document.getElementById("clientOwner").value,
-                project_description: document.getElementById("projectDescription").value,
-                project_cost: document.getElementById("projectCost").value,
-                project_dates: document.getElementById("projectDates").value,
-                highlights: document.getElementById("highlights").value,
-                client_contact: document.getElementById("clientContact").value
+                Client_Name: document.getElementById("Client_Name").value,
+                Client_Owner: document.getElementById("Client_Owner").value,
+                Client_Contact: document.getElementById("Client_Contact").value,
+                Description: document.getElementById("Description").value,
+                Highlights: document.getElementById("Highlights").value,
+                Location: document.getElementById("Location").value,
+                Project_Cost: document.getElementById("Project_Cost").value,
+                Project_Dates: document.getElementById("Project_Dates").value,
+                Project_Title: document.getElementById("Project_Title").value
             };
 
             try {
@@ -47,36 +93,38 @@
     </script>
 </head>
 <body>
-    <h2>PDF Live Input Form</h2>
-    <form onsubmit="event.preventDefault(); generatePDF();">
-        <label for="clientName">Client Name:</label>
-        <input type="text" id="clientName" required><br><br>
+    <div class="container">
+        <h2>PDF Live Input Form</h2>
+        <form onsubmit="event.preventDefault(); generatePDF();">
+            <label for="Client_Name">Client Name:</label>
+            <input type="text" id="Client_Name" required>
 
-        <label for="projectTitle">Project Title:</label>
-        <input type="text" id="projectTitle" required><br><br>
+            <label for="Project_Title">Project Title:</label>
+            <input type="text" id="Project_Title" required>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" required><br><br>
+            <label for="Location">Location:</label>
+            <input type="text" id="Location" required>
 
-        <label for="clientOwner">Client/Owner:</label>
-        <input type="text" id="clientOwner" required><br><br>
+            <label for="Client_Owner">Client/Owner:</label>
+            <input type="text" id="Client_Owner" required>
 
-        <label for="projectDescription">Description:</label>
-        <textarea id="projectDescription" required></textarea><br><br>
+            <label for="Client_Contact">Client Contact:</label>
+            <input type="text" id="Client_Contact" required>
 
-        <label for="projectCost">Project Cost:</label>
-        <input type="text" id="projectCost" required><br><br>
+            <label for="Description">Description:</label>
+            <textarea id="Description" required></textarea>
 
-        <label for="projectDates">PROJECT COST 1:</label>
-        <input type="text" id="projectDates" required><br><br>
+            <label for="Highlights">Highlights:</label>
+            <textarea id="Highlights" required></textarea>
 
-        <label for="highlights">PROJECT COST 2:</label>
-        <textarea id="highlights" required></textarea><br><br>
+            <label for="Project_Cost">Project Cost:</label>
+            <input type="text" id="Project_Cost" required>
 
-        <label for="clientContact">Client Contact:</label>
-        <input type="text" id="clientContact" required><br><br>
+            <label for="Project_Dates">Project Dates:</label>
+            <input type="text" id="Project_Dates" required>
 
-        <button type="submit">Generate PDF</button>
-    </form>
+            <button type="submit">Generate PDF</button>
+        </form>
+    </div>
 </body>
 </html>
