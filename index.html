@@ -9,7 +9,13 @@
             const formData = {
                 client_name: document.getElementById("clientName").value,
                 project_title: document.getElementById("projectTitle").value,
-                location: document.getElementById("location").value
+                location: document.getElementById("location").value,
+                client_owner: document.getElementById("clientOwner").value,
+                project_description: document.getElementById("projectDescription").value,
+                project_cost: document.getElementById("projectCost").value,
+                project_dates: document.getElementById("projectDates").value,
+                highlights: document.getElementById("highlights").value,
+                client_contact: document.getElementById("clientContact").value
             };
 
             try {
@@ -51,6 +57,24 @@
 
         <label for="location">Location:</label>
         <input type="text" id="location" required><br><br>
+
+        <label for="clientOwner">Client/Owner:</label>
+        <input type="text" id="clientOwner" required><br><br>
+
+        <label for="projectDescription">Project Description:</label>
+        <textarea id="projectDescription" required></textarea><br><br>
+
+        <label for="projectCost">Project Cost:</label>
+        <input type="text" id="projectCost" required><br><br>
+
+        <label for="projectDates">Project Dates:</label>
+        <input type="text" id="projectDates" required><br><br>
+
+        <label for="highlights">Highlights:</label>
+        <textarea id="highlights" required></textarea><br><br>
+
+        <label for="clientContact">Client Contact:</label>
+        <input type="text" id="clientContact" required><br><br>
 
         <button type="submit">Generate PDF</button>
     </form>
